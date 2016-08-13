@@ -1,5 +1,6 @@
 //asteroid clone (core mechanics only)
 //arrow keys to move + x to shoot
+var laser; 
 
 var bullets;
 var asteroids;
@@ -14,6 +15,7 @@ var destroyed = 0;
 function setup() {
 createCanvas(800,600);
 
+laser = loadSound("assets/laser.wav"); 
 bulletImage = loadImage("assets/asteroids_bullet.png");
 shipImage = loadImage("assets/asteroids_ship0001.png");
 particleImage = loadImage("assets/asteroids_particle.png");
@@ -81,6 +83,7 @@ function draw() {
     bullet.setSpeed(10+ship.getSpeed(), ship.rotation);
     bullet.life = 30;
     bullets.add(bullet);
+    laser.play(); 
     }
     
   
